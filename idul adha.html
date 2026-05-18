@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rizki Cerdas, Ganteng, Berprestasi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    background:linear-gradient(180deg,#06131f,#0d2436,#102c43);
+    color:white;
+    height:100dvh;
+    position:relative;
+}
+
+/* Stars */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+    from{
+        opacity:0.2;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* Moon */
+
+.moon{
+    position:absolute;
+    top:60px;
+    right:70px;
+    width:120px;
+    height:120px;
+    background:#fff4c7;
+    border-radius:50%;
+    box-shadow:0 0 40px #fff4c7;
+}
+
+.moon::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#102c43;
+    border-radius:50%;
+    top:-5px;
+    left:25px;
+}
+
+/* Main */
+
+.container{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    text-align:center;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:35px;
+
+    padding:45px 30px;
+
+    max-width:750px;
+    width:100%;
+
+    box-shadow:0 0 40px rgba(0,0,0,0.35);
+
+    animation:fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.icon{
+    font-size:75px;
+    margin-bottom:15px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.title{
+    font-size:42px;
+    font-weight:700;
+    color:#ffe082;
+
+    margin-bottom:20px;
+}
+
+.subtitle{
+    font-size:18px;
+    line-height:1.8;
+    color:#f1f1f1;
+}
+
+/* Countdown */
+
+.countdown{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,120px);
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:35px;
+}
+
+.time-box{
+    width:120px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    border-radius:20px;
+
+    padding:20px 10px;
+
+    box-shadow:0 0 20px rgba(255,215,100,0.1);
+}
+
+.time{
+    font-size:38px;
+    font-weight:700;
+
+    color:#ffd54f;
+}
+
+.label{
+    margin-top:8px;
+    font-size:14px;
+    opacity:0.8;
+}
+
+/* Divider */
+
+.divider{
+    width:130px;
+    height:4px;
+
+    background:#ffd54f;
+
+    margin:25px auto;
+
+    border-radius:20px;
+}
+
+/* Footer */
+
+.footer{
+    margin-top:30px;
+    opacity:0.8;
+    font-size:15px;
+}
+
+/* Fade */
+
+.fade-out{
+    animation:fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        transform:scale(0.95);
+    }
+}
+
+/* Mosque */
+
+.mosque{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    z-index:1;
+}
+
+.mosque svg{
+    width:100%;
+    display:block;
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .title{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+
+    .countdown{
+        grid-template-columns:
+        repeat(2,90px);
+    }
+
+    .time-box{
+        width:90px;
+    }
+
+    .time{
+        font-size:28px;
+    }
+
+    .moon{
+        width:90px;
+        height:90px;
+        right:30px;
+    }
+
+    .moon::after{
+        width:75px;
+        height:75px;
+    }
+
+    .card{
+        padding:35px 20px;
+    }
+}
+
+/* HP kecil */
+
+@media(max-height:750px){
+
+    .card{
+        padding:28px 18px;
+        border-radius:28px;
+    }
+
+    .icon{
+        font-size:52px;
+        margin-bottom:10px;
+    }
+
+    .title{
+        font-size:24px;
+        margin-bottom:12px;
+    }
+
+    .subtitle{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .divider{
+        margin:18px auto;
+    }
+
+    .countdown{
+        grid-template-columns:
+        repeat(2,72px);
+
+        gap:10px;
+
+        margin-top:22px;
+    }
+
+    .time-box{
+        width:72px;
+        padding:12px 6px;
+    }
+
+    .time{
+        font-size:22px;
+    }
+
+    .label{
+        font-size:11px;
+    }
+
+    .footer{
+        margin-top:18px;
+        font-size:12px;
+    }
+
+    .moon{
+        width:70px;
+        height:70px;
+        top:30px;
+        right:20px;
+    }
+
+    .moon::after{
+        width:58px;
+        height:58px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Musik -->
+<audio id="bgMusic" loop>
+    <source src="Gambus.mp3" type="audio/mp3">
+</audio>
+
+<div class="stars" id="stars"></div>
+
+<div class="moon"></div>
+
+<div class="container">
+
+    <div class="card" id="mainCard">
+
+        <div class="icon">🕌</div>
+
+        <div class="title" id="title">
+            Menuju Hari Raya Idul Adha
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="subtitle" id="subtitle">
+            Menanti datangnya hari penuh keberkahan,
+            kebahagiaan, dan keikhlasan 🤍
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown" id="countdown">
+
+            <div class="time-box">
+                <div class="time" id="days">0</div>
+                <div class="label">Hari</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="hours">0</div>
+                <div class="label">Jam</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="minutes">0</div>
+                <div class="label">Menit</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="seconds">0</div>
+                <div class="label">Detik</div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            — dr. Rizki Ridho Pratama —
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Masjid -->
+<div class="mosque">
+
+<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+
+<path fill="#081521" fill-opacity="1"
+d="M0,256L30,240C60,224,120,192,180,186.7C240,181,300,203,360,197.3C420,192,480,160,540,149.3C600,139,660,149,720,170.7C780,192,840,224,900,224C960,224,1020,192,1080,181.3C1140,171,1200,181,1260,192C1320,203,1380,213,1410,218.7L1440,224L1440,320L0,320Z">
+
+</path>
+
+</svg>
+
+</div>
+
+<script>
+
+/* Stars */
+
+const starsContainer = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star = document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.top = Math.random()*100 + "%";
+    star.style.left = Math.random()*100 + "%";
+
+    star.style.animationDuration =
+        (Math.random()*3+1) + "s";
+
+    starsContainer.appendChild(star);
+}
+
+/* Countdown */
+
+const targetDate =
+new Date("May 27, 2026 00:00:00").getTime();
+
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+const countdown = document.getElementById("countdown");
+const card = document.getElementById("mainCard");
+
+const music = document.getElementById("bgMusic");
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance = targetDate - now;
+
+    /* Jika selesai */
+
+    if(distance <= 0){
+
+        clearInterval(interval);
+
+        card.classList.add("fade-out");
+
+        setTimeout(() => {
+
+            title.innerHTML =
+            "Selamat Hari Raya Idul Adha 1447 H";
+
+            subtitle.innerHTML =
+            `
+            Semoga di hari yang penuh keberkahan ini,
+            kita selalu diberikan kesehatan,
+            kebahagiaan, dan hati yang penuh keikhlasan.
+            <br><br>
+            Mohon maaf lahir dan batin 🤍
+            `;
+
+            countdown.style.display = "none";
+
+            card.classList.remove("fade-out");
+
+            /* Musik */
+
+            music.volume = 0.7;
+
+            music.play().catch(() => {
+
+                document.addEventListener("click", () => {
+                    music.play();
+                }, { once:true });
+
+            });
+
+        }, 1500);
+
+        return;
+    }
+
+    /* Hitung */
+
+    const days =
+    Math.floor(distance / (1000*60*60*24));
+
+    const hours =
+    Math.floor((distance % (1000*60*60*24))
+    / (1000*60*60));
+
+    const minutes =
+    Math.floor((distance % (1000*60*60))
+    / (1000*60));
+
+    const seconds =
+    Math.floor((distance % (1000*60))
+    / 1000);
+
+    /* Tampilkan */
+
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = hours;
+    minutesEl.innerHTML = minutes;
+    secondsEl.innerHTML = seconds;
+}
+
+const interval =
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+</script>
+
+</body>
+</html>
