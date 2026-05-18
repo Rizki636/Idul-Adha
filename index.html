@@ -351,6 +351,146 @@ body{
     }
 }
 
+/* =========================
+   Overlay Pembuka
+========================= */
+
+.open-overlay{
+    position:fixed;
+    inset:0;
+
+    z-index:999;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    background:rgba(5,15,25,0.88);
+
+    backdrop-filter:blur(10px);
+
+    animation:fadeIn 0.8s ease;
+}
+
+.open-card{
+
+    width:100%;
+    max-width:380px;
+
+    padding:35px 25px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    box-shadow:0 0 40px rgba(0,0,0,0.35);
+
+    animation:fadeUp 1s ease;
+}
+
+.open-icon{
+    font-size:65px;
+
+    margin-bottom:18px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.open-title{
+    font-size:28px;
+    font-weight:700;
+
+    line-height:1.4;
+
+    color:#ffe082;
+
+    margin-bottom:28px;
+}
+
+.open-button{
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:16px;
+    font-weight:600;
+
+    color:#06131f;
+
+    background:#ffe082;
+
+    padding:14px 30px;
+
+    border-radius:18px;
+
+    transition:0.3s;
+}
+
+.open-button:hover{
+    transform:scale(1.03);
+}
+
+.open-button:active{
+    transform:scale(0.97);
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .open-card{
+        max-width:320px;
+        padding:30px 20px;
+        border-radius:25px;
+    }
+
+    .open-icon{
+        font-size:55px;
+    }
+
+    .open-title{
+        font-size:22px;
+        margin-bottom:22px;
+    }
+
+    .open-button{
+        width:100%;
+        font-size:15px;
+        padding:13px 20px;
+    }
+}
+
+@media(max-height:750px){
+
+    .open-card{
+        padding:24px 18px;
+    }
+
+    .open-icon{
+        font-size:48px;
+        margin-bottom:14px;
+    }
+
+    .open-title{
+        font-size:20px;
+        margin-bottom:18px;
+    }
+
+    .open-button{
+        font-size:14px;
+        padding:12px 18px;
+    }
+}
 </style>
 </head>
 
@@ -483,33 +623,67 @@ function updateCountdown(){
 
         setTimeout(() => {
 
-            title.innerHTML =
-            "Selamat Hari Raya Idul Adha 1447 H";
+countdown.style.display = "none";
 
-            subtitle.innerHTML =
-            `
-            Semoga di hari yang penuh keberkahan ini,
-            kita selalu diberikan kesehatan,
-            kebahagiaan, dan hati yang penuh keikhlasan.
-            <br><br>
-            Mohon maaf lahir dan batin 🤍
-            `;
+/* Coba autoplay */
 
-            countdown.style.display = "none";
+music.volume = 0.7;
 
-            card.classList.remove("fade-out");
+const playPromise = music.play();
 
-            /* Musik */
+/* Tampilkan overlay */
 
-            music.volume = 0.7;
+const overlay =
+document.getElementById("openOverlay");
 
-            music.play().catch(() => {
+const openButton =
+document.getElementById("openButton");
 
-                document.addEventListener("click", () => {
-                    music.play();
-                }, { once:true });
+overlay.style.display = "flex";
 
-            });
+/* Klik tombol buka */
+
+openButton.addEventListener("click", () => {
+
+    /* Kalau autoplay gagal */
+
+    if(playPromise !== undefined){
+
+        playPromise.catch(() => {
+            music.play();
+        });
+    }
+
+    /* Fade out overlay */
+
+    overlay.style.transition =
+    "opacity 0.8s ease";
+
+    overlay.style.opacity = "0";
+
+    setTimeout(() => {
+
+        overlay.style.display = "none";
+
+        /* Ucapan utama */
+
+        title.innerHTML =
+        "Selamat Hari Raya Idul Adha 1447 H";
+
+        subtitle.innerHTML =
+        `
+        Semoga di hari yang penuh keberkahan ini,
+        kita selalu diberikan kesehatan,
+        kebahagiaan, dan hati yang penuh keikhlasan.
+        <br><br>
+        Mohon maaf lahir dan batin 🤍
+        `;
+
+        card.classList.remove("fade-out");
+
+    },800);
+
+},{ once:true });
 
         }, 1500);
 
@@ -548,5 +722,23 @@ updateCountdown();
 
 </script>
 
+<!-- Overlay Pembuka -->
+<div class="open-overlay" id="openOverlay">
+
+    <div class="open-card">
+
+        <div class="open-icon">🕌</div>
+
+        <div class="open-title">
+            Hari Raya Idul Adha 1447 H
+        </div>
+
+        <button class="open-button" id="openButton">
+            Buka Ucapan
+        </button>
+
+    </div>
+
+</div>
 </body>
 </html>
