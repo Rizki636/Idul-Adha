@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Titip Doa Idul Adha 1447 H</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    background:
+    linear-gradient(180deg,#06131f,#0d2436,#102c43);
+    color:white;
+    height:100dvh;
+    position:relative;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.stars{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* =========================
+   MOON
+========================= */
+
+.moon{
+    position:absolute;
+    top:18px;
+    right:16px;
+    width:52px;
+    height:52px;
+    background:#fff4c7;
+    border-radius:50%;
+    box-shadow:0 0 24px #fff4c7;
+}
+
+.moon::after{
+    content:"";
+    position:absolute;
+    width:42px;
+    height:42px;
+    background:#102c43;
+    border-radius:50%;
+    top:-3px;
+    left:12px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    height:100dvh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:6px;
+}
+
+.card{
+
+    width:92%;
+    max-width:430px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:22px;
+
+    padding:14px 12px;
+
+    text-align:center;
+
+    box-shadow:0 0 24px rgba(0,0,0,0.28);
+
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.icon{
+    font-size:36px;
+    margin-bottom:8px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+    100%{transform:translateY(0);}
+}
+
+.title{
+    font-size:19px;
+    font-weight:700;
+    color:#ffe082;
+
+    line-height:1.3;
+
+    margin-bottom:8px;
+}
+
+.subtitle{
+    font-size:11px;
+    line-height:1.5;
+    opacity:0.9;
+}
+
+.divider{
+    width:65px;
+    height:2px;
+
+    margin:14px auto;
+
+    border-radius:30px;
+
+    background:#ffd54f;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-title{
+    font-size:11px;
+    opacity:0.75;
+
+    margin-bottom:10px;
+}
+
+.countdown{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,58px);
+
+    justify-content:center;
+
+    gap:6px;
+}
+
+.time-box{
+
+    background:rgba(255,255,255,0.07);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:14px;
+
+    padding:8px 3px;
+}
+
+.time{
+    font-size:17px;
+    font-weight:700;
+    color:#ffd54f;
+}
+
+.label{
+    margin-top:3px;
+    font-size:9px;
+    opacity:0.75;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-area{
+    margin-top:16px;
+}
+
+.input-box,
+.textarea-box{
+
+    width:100%;
+
+    border:none;
+    outline:none;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    border-radius:12px;
+
+    padding:10px;
+
+    font-size:12px;
+
+    font-family:'Poppins',sans-serif;
+}
+
+.input-box{
+    margin-bottom:8px;
+}
+
+.textarea-box{
+    resize:none;
+    height:72px;
+}
+
+.input-box::placeholder,
+.textarea-box::placeholder{
+    color:rgba(255,255,255,0.6);
+}
+
+.char-counter{
+    margin-top:4px;
+    text-align:right;
+    font-size:10px;
+    opacity:0.7;
+}
+
+.submit-button{
+
+    margin-top:12px;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    background:#ffe082;
+
+    color:#06131f;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:12px;
+    font-weight:700;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    transition:0.3s;
+}
+
+.submit-button:hover{
+    transform:scale(1.03);
+}
+
+.submit-button:active{
+    transform:scale(0.97);
+}
+
+.submit-button:disabled{
+    opacity:0.7;
+    cursor:not-allowed;
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+.success-box{
+    display:none;
+    margin-top:16px;
+    animation:fadeUp 0.8s ease;
+}
+
+.success-icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.success-title{
+    font-size:17px;
+    font-weight:700;
+    color:#ffe082;
+
+    margin-bottom:8px;
+}
+
+.success-text{
+    font-size:11px;
+    line-height:1.5;
+    opacity:0.9;
+}
+
+.again-button{
+
+    margin-top:14px;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    background:#ffe082;
+
+    color:#06131f;
+
+    font-family:'Poppins',sans-serif;
+
+    font-weight:700;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+}
+
+/* =========================
+   TOTAL
+========================= */
+
+.total-message{
+    margin-top:14px;
+    font-size:11px;
+    opacity:0.75;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    margin-top:14px;
+    opacity:0.65;
+    font-size:10px;
+}
+
+a{
+    text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="moon"></div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="icon">✉️</div>
+
+        <div class="title">
+            Titipkan Doamu Untuk Hari Raya Idul Adha 1447 H
+        </div>
+
+        <div class="subtitle">
+            Tulis doa, harapan, atau pesan terbaikmu sekarang.
+            <br>
+            Pesan ini akan hadir saat Hari Raya tiba 🤍
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="countdown-title">
+            Pesan akan bisa dibuka dalam:
+        </div>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <div class="time" id="days">0</div>
+                <div class="label">Hari</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="hours">0</div>
+                <div class="label">Jam</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="minutes">0</div>
+                <div class="label">Menit</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="seconds">0</div>
+                <div class="label">Detik</div>
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+        <div class="form-area" id="formArea">
+
+            <input
+                type="text"
+                class="input-box"
+                id="nameInput"
+                maxlength="20"
+                placeholder="Namamu..."
+            >
+
+            <textarea
+                class="textarea-box"
+                id="messageInput"
+                maxlength="120"
+                placeholder="Tulis doa, harapan, atau pesan terbaikmu..."
+            ></textarea>
+
+            <div class="char-counter">
+                <span id="charCount">0</span>/120
+            </div>
+
+            <button class="submit-button" id="submitButton">
+                Segel Pesan ✉️
+            </button>
+
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="success-box" id="successBox">
+
+            <div class="success-icon">
+                🕌
+            </div>
+
+            <div class="success-title">
+                Pesan Berhasil Disegel
+            </div>
+
+            <div class="success-text">
+                Doamu telah disimpan dan akan
+                dibuka saat Hari Raya Idul Adha 1447 H 🤍
+            </div>
+
+            <button class="again-button" id="againButton">
+                Tulis Pesan Lagi
+            </button>
+
+        </div>
+
+        <div class="total-message" id="totalMessage">
+            💌 Menghitung pesan yang telah disegel...
+        </div>
+
+        <div class="footer">
+            — dr. Rizki Ridho Pratama —
+        </div>
+        
+        <!-- OPEN SCENE -->
+        
+        <div class="success-box" id="openScene">
+        
+            <div class="success-icon">
+                ✨
+            </div>
+        
+            <div class="success-title">
+                Hari Raya Telah Tiba
+            </div>
+        
+            <div class="success-text">
+                Sekarang kamu sudah bisa membuka pesan yang telah disegel 🤍
+            </div>
+        
+            <a href="https://rizki636.github.io/Idul-Adha/" target="_blank">
+                <button class="again-button">
+                    Buka Pesan Sekarang
+                </button>
+            </a>
+        
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* =========================
+   STARS
+========================= */
+
+const starsContainer =
+document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star =
+    document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.top =
+    Math.random()*100 + "%";
+
+    star.style.left =
+    Math.random()*100 + "%";
+
+    star.style.animationDuration =
+    (Math.random()*3+1)+"s";
+
+    starsContainer.appendChild(star);
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+const targetDate =
+new Date("May 27, 2026 00:00:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance =
+    targetDate - now;
+
+    if(distance <= 0){
+
+        document.getElementById("days")
+        .textContent = "0";
+
+        document.getElementById("hours")
+        .textContent = "0";
+
+        document.getElementById("minutes")
+        .textContent = "0";
+
+        document.getElementById("seconds")
+        .textContent = "0";
+
+        document.querySelector(".countdown")
+        .style.display = "none";
+
+        document.querySelector(".countdown-title")
+        .style.display = "none";
+
+        document.getElementById("formArea")
+        .style.display = "none";
+
+        document.getElementById("totalMessage")
+        .style.display = "none";
+
+        document.getElementById("openScene")
+        .style.display = "block";
+
+        return;
+    }
+
+    const days =
+    Math.floor(distance / (1000*60*60*24));
+
+    const hours =
+    Math.floor((distance % (1000*60*60*24))
+    / (1000*60*60));
+
+    const minutes =
+    Math.floor((distance % (1000*60*60))
+    / (1000*60));
+
+    const seconds =
+    Math.floor((distance % (1000*60))
+    / 1000);
+
+    document.getElementById("days")
+    .textContent = days;
+
+    document.getElementById("hours")
+    .textContent = hours;
+
+    document.getElementById("minutes")
+    .textContent = minutes;
+
+    document.getElementById("seconds")
+    .textContent = seconds;
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+/* =========================
+   CHARACTER COUNTER
+========================= */
+
+const messageInput =
+document.getElementById("messageInput");
+
+const charCount =
+document.getElementById("charCount");
+
+messageInput.addEventListener("input", () => {
+
+    charCount.textContent =
+    messageInput.value.length;
+
+});
+
+/* =========================
+   SUBMIT
+========================= */
+
+const submitButton =
+document.getElementById("submitButton");
+
+const formArea =
+document.getElementById("formArea");
+
+const successBox =
+document.getElementById("successBox");
+
+const againButton =
+document.getElementById("againButton");
+
+let isSending = false;
+
+submitButton.addEventListener("click", () => {
+
+    if(isSending) return;
+
+    const name =
+    document.getElementById("nameInput")
+    .value.trim();
+
+    const message =
+    document.getElementById("messageInput")
+    .value.trim();
+
+    if(!name || !message){
+
+        alert("Isi nama dan pesan dulu ya 🤍");
+
+        return;
+    }
+
+    isSending = true;
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+    "Menyegel pesan...";
+
+    fetch("https://script.google.com/macros/s/AKfycbxOLMlFZomFimBrQt-gRF7lmg41FujYDke2ZbFsJuS2ejiM9vXhi6dI_vTGyPO0FXi1SA/exec",{
+
+        method:"POST",
+
+        body:JSON.stringify({
+
+            name:name,
+            message:message
+
+        })
+
+    })
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        formArea.style.display =
+        "none";
+
+        successBox.style.display =
+        "block";
+
+        updateTotalMessage();
+
+        isSending = false;
+
+    })
+
+    .catch(() => {
+
+        alert("Gagal menyegel pesan 🤍");
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+        "Segel Pesan ✉️";
+
+        isSending = false;
+
+    });
+
+});
+
+/* =========================
+   AGAIN BUTTON
+========================= */
+
+againButton.addEventListener("click", () => {
+
+    document.getElementById("nameInput")
+    .value = "";
+
+    document.getElementById("messageInput")
+    .value = "";
+
+    charCount.textContent = "0";
+
+    successBox.style.display =
+    "none";
+
+    formArea.style.display =
+    "block";
+
+    submitButton.disabled = false;
+
+    submitButton.textContent =
+    "Segel Pesan ✉️";
+
+});
+
+/* =========================
+   TOTAL MESSAGE
+========================= */
+
+function updateTotalMessage(){
+
+fetch("https://script.google.com/macros/s/AKfycbxOLMlFZomFimBrQt-gRF7lmg41FujYDke2ZbFsJuS2ejiM9vXhi6dI_vTGyPO0FXi1SA/exec")
+
+.then(res => res.json())
+
+.then(data => {
+
+    const validData =
+    data.filter(item => {
+
+        return item.name &&
+               item.message;
+
+    });
+
+    document.getElementById("totalMessage")
+    .textContent =
+    `💌 ${validData.length} pesan telah disegel`;
+
+})
+
+.catch(() => {
+
+    document.getElementById("totalMessage")
+    .textContent =
+    "💌 Pesan terus berdatangan 🤍";
+
+});
+
+}
+
+updateTotalMessage();
+
+</script>
+</body>
+</html>
