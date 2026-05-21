@@ -482,6 +482,19 @@ a{
 
         </div>
 
+        <!-- DANA KAGET -->
+        <div id="danaBox" style="display:none; margin-top:14px;">
+        
+            <a href="https://link.dana.id/danakaget?c=s2qstabmg&r=bJVtEc&orderId=20260521101214535515010300166067779046614" target="_blank">
+                <button class="again-button">
+                    🎁 Ambil Dana Kaget
+                </button>
+            </a>
+        
+
+        
+        </div>
+
         <div class="total-message" id="totalMessage">
             💌 Menghitung pesan yang telah disegel...
         </div>
@@ -707,6 +720,26 @@ submitButton.addEventListener("click", () => {
 
         successBox.style.display =
         "block";
+
+        // =========================
+        // DANA KAGET
+        // =========================
+        
+        const now =
+        new Date().getTime();
+        
+        const danaStart =
+        new Date("May 21, 2026 00:00:00").getTime();
+        
+        const danaEnd =
+        new Date("May 23, 2026 23:59:59").getTime();
+        
+        if(now >= danaStart && now <= danaEnd){
+        
+            document.getElementById("danaBox")
+            .style.display = "block";
+        
+        }
 
         updateTotalMessage();
 
