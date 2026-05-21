@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rizki Cerdas, Ganteng, Berprestasi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    background:linear-gradient(180deg,#06131f,#0d2436,#102c43);
+    color:white;
+    height:100dvh;
+    position:relative;
+}
+
+/* Stars */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+    from{
+        opacity:0.2;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* Moon */
+
+.moon{
+    position:absolute;
+    top:60px;
+    right:70px;
+    width:120px;
+    height:120px;
+    background:#fff4c7;
+    border-radius:50%;
+    box-shadow:0 0 40px #fff4c7;
+}
+
+.moon::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#102c43;
+    border-radius:50%;
+    top:-5px;
+    left:25px;
+}
+
+/* Main */
+
+.container{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    text-align:center;
+    
+    transition:0.8s ease;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:35px;
+
+    padding:45px 30px;
+
+    max-width:750px;
+    width:100%;
+
+    box-shadow:0 0 40px rgba(0,0,0,0.35);
+
+    animation:fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.icon{
+    font-size:75px;
+    margin-bottom:15px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.title{
+    font-size:42px;
+    font-weight:700;
+    color:#ffe082;
+
+    margin-bottom:20px;
+}
+
+.subtitle{
+    font-size:18px;
+    line-height:1.8;
+    color:#f1f1f1;
+}
+
+/* Countdown */
+
+.countdown{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,120px);
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:35px;
+}
+
+.time-box{
+    width:120px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    border-radius:20px;
+
+    padding:20px 10px;
+
+    box-shadow:0 0 20px rgba(255,215,100,0.1);
+}
+
+.time{
+    font-size:38px;
+    font-weight:700;
+
+    color:#ffd54f;
+}
+
+.label{
+    margin-top:8px;
+    font-size:14px;
+    opacity:0.8;
+}
+
+/* Divider */
+
+.divider{
+    width:130px;
+    height:4px;
+
+    background:#ffd54f;
+
+    margin:25px auto;
+
+    border-radius:20px;
+}
+
+/* Footer */
+
+.footer{
+    margin-top:30px;
+    opacity:0.8;
+    font-size:15px;
+}
+
+/* Fade */
+
+.fade-out{
+    animation:fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        transform:scale(0.95);
+    }
+}
+
+/* Mosque */
+
+.mosque{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    z-index:1;
+}
+
+.mosque svg{
+    width:100%;
+    display:block;
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .title{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+
+    .countdown{
+        grid-template-columns:
+        repeat(2,90px);
+    }
+
+    .time-box{
+        width:90px;
+    }
+
+    .time{
+        font-size:28px;
+    }
+
+    .moon{
+        width:90px;
+        height:90px;
+        right:30px;
+    }
+
+    .moon::after{
+        width:75px;
+        height:75px;
+    }
+
+    .card{
+        padding:35px 20px;
+    }
+}
+
+/* HP kecil */
+
+@media(max-height:750px){
+
+    .card{
+        padding:28px 18px;
+        border-radius:28px;
+    }
+
+    .icon{
+        font-size:52px;
+        margin-bottom:10px;
+    }
+
+    .title{
+        font-size:24px;
+        margin-bottom:12px;
+    }
+
+    .subtitle{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .divider{
+        margin:18px auto;
+    }
+
+    .countdown{
+        grid-template-columns:
+        repeat(2,72px);
+
+        gap:10px;
+
+        margin-top:22px;
+    }
+
+    .time-box{
+        width:72px;
+        padding:12px 6px;
+    }
+
+    .time{
+        font-size:22px;
+    }
+
+    .label{
+        font-size:11px;
+    }
+
+    .footer{
+        margin-top:18px;
+        font-size:12px;
+    }
+
+    .moon{
+        width:70px;
+        height:70px;
+        top:30px;
+        right:20px;
+    }
+
+    .moon::after{
+        width:58px;
+        height:58px;
+    }
+}
+
+/* =========================
+   Overlay Pembuka
+========================= */
+
+.open-overlay{
+    position:fixed;
+    inset:0;
+
+    z-index:999;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    background:rgba(5,15,25,0.88);
+
+    backdrop-filter:blur(10px);
+
+    animation:fadeIn 0.8s ease;
+}
+
+.open-card{
+
+    width:100%;
+    max-width:380px;
+
+    padding:35px 25px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    box-shadow:0 0 40px rgba(0,0,0,0.35);
+
+    animation:fadeUp 1s ease;
+}
+
+.open-icon{
+    font-size:65px;
+
+    margin-bottom:18px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.open-title{
+    font-size:28px;
+    font-weight:700;
+
+    line-height:1.4;
+
+    color:#ffe082;
+
+    margin-bottom:28px;
+}
+
+.open-button{
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:16px;
+    font-weight:600;
+
+    color:#06131f;
+
+    background:#ffe082;
+
+    padding:14px 30px;
+
+    border-radius:18px;
+
+    transition:0.3s;
+}
+
+.open-button:hover{
+    transform:scale(1.03);
+}
+
+.open-button:active{
+    transform:scale(0.97);
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .open-card{
+        max-width:320px;
+        padding:30px 20px;
+        border-radius:25px;
+    }
+
+    .open-icon{
+        font-size:55px;
+    }
+
+    .open-title{
+        font-size:22px;
+        margin-bottom:22px;
+    }
+
+    .open-button{
+        width:100%;
+        font-size:15px;
+        padding:13px 20px;
+    }
+}
+
+@media(max-height:750px){
+
+    .open-card{
+        padding:24px 18px;
+    }
+
+    .open-icon{
+        font-size:48px;
+        margin-bottom:14px;
+    }
+
+    .open-title{
+        font-size:20px;
+        margin-bottom:18px;
+    }
+
+    .open-button{
+        font-size:14px;
+        padding:12px 18px;
+    }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.main-buttons,
+.main-buttons{
+    display:none;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+}
+.wish-buttons{
+    margin-top:30px;
+
+    display:flex;
+    gap:15px;
+
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.scene-button,
+.submit-button{
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffe082;
+
+    color:#06131f;
+
+    font-weight:600;
+
+    padding:14px 24px;
+
+    border-radius:18px;
+
+    transition:0.3s;
+
+}
+
+.scene-button:hover,
+.submit-button:hover{
+    transform:scale(1.04);
+}
+
+.submit-button:disabled{
+    opacity:0.7;
+    cursor:not-allowed;
+}
+
+/* =========================
+   SCENE DOA
+========================= */
+
+.wish-scene{
+
+    position:fixed;
+    inset:0;
+
+    z-index:50;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:15px;
+
+    transform:translateX(100%);
+    transition:1s ease;
+}
+
+.wish-scene.active{
+    transform:translateX(0);
+}
+
+.container.hide-main{
+
+    transform:
+    translateX(-80px);
+
+    opacity:0;
+
+    filter:blur(8px);
+}
+
+.wish-card{
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:35px;
+
+    padding:45px 30px;
+
+    max-width:750px;
+    width:100%;
+
+    box-shadow:0 0 40px rgba(0,0,0,0.35);
+
+    overflow:hidden;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.wish-slider{
+    margin-top:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    height:220px;
+    
+    display:flex;
+    align-items:center;
+}
+
+.wish-track{
+    display:flex;
+    gap:20px;
+
+    transition:transform 0.8s ease;
+}
+
+
+
+.wish-item{
+
+    min-width:280px;
+    max-width:280px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:24px;
+
+    padding:22px;
+
+    text-align:left;
+}
+
+.wish-name{
+    font-weight:700;
+    color:#ffe082;
+
+    margin-bottom:10px;
+}
+
+.wish-message{
+    font-size:14px;
+    line-height:1.7;
+    opacity:0.92;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup-overlay{
+
+    position:fixed;
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.55);
+
+    backdrop-filter:blur(8px);
+}
+
+.popup-card{
+
+    width:100%;
+    max-width:400px;
+
+    background:#102c43;
+
+    border-radius:28px;
+
+    padding:30px 24px;
+
+    position:relative;
+}
+
+.popup-title{
+    font-size:24px;
+    font-weight:700;
+
+    margin-bottom:25px;
+
+    color:#ffe082;
+}
+
+.popup-close{
+
+    position:absolute;
+    top:15px;
+    right:18px;
+
+    cursor:pointer;
+
+    font-size:22px;
+}
+
+.popup-card input,
+.popup-card textarea{
+
+    width:100%;
+
+    border:none;
+    outline:none;
+
+    border-radius:16px;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    font-family:'Poppins',sans-serif;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+}
+
+.popup-card textarea{
+    resize:none;
+    height:120px;
+}
+
+.char-counter{
+    text-align:right;
+    font-size:13px;
+    opacity:0.7;
+
+    margin-bottom:18px;
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .wish-item{
+        min-width:240px;
+        max-width:240px;
+    }
+
+    .wish-slider{
+        height:240px;
+    }
+}
+
+/* =========================
+   WISH HEADER
+========================= */
+
+.wish-header{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:18px;
+
+    text-align:left;
+}
+
+.wish-header-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:32px;
+
+    border:1px solid
+    rgba(255,255,255,0.12);
+}
+
+.wish-header-title{
+
+    font-size:34px;
+    font-weight:700;
+
+    color:#ffe082;
+}
+
+.wish-header-subtitle{
+
+    margin-top:4px;
+
+    opacity:0.8;
+
+    font-size:14px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.wish-loading{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:14px;
+
+    background:
+    rgba(6,19,31,0.45);
+
+    backdrop-filter:blur(4px);
+
+    z-index:5;
+
+    border-radius:24px;
+}
+
+.loading-moon{
+
+    font-size:42px;
+
+    animation:loadingFloat 2s
+    ease-in-out infinite;
+}
+
+.loading-text{
+
+    font-size:15px;
+
+    opacity:0.85;
+}
+
+@keyframes loadingFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Musik -->
+<audio id="bgMusic" loop>
+    <source src="Gambus.mp3" type="audio/mp3">
+</audio>
+
+<div class="stars" id="stars"></div>
+
+<div class="moon"></div>
+
+<div class="container">
+
+    <div class="card" id="mainCard">
+
+        <div class="icon">🕌</div>
+
+        <div class="title" id="title">
+            Menuju Hari Raya Idul Adha
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="subtitle" id="subtitle">
+            Menanti datangnya hari penuh keberkahan,
+            kebahagiaan, dan keikhlasan 🤍
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown" id="countdown">
+
+            <div class="time-box">
+                <div class="time" id="days">0</div>
+                <div class="label">Hari</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="hours">0</div>
+                <div class="label">Jam</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="minutes">0</div>
+                <div class="label">Menit</div>
+            </div>
+
+            <div class="time-box">
+                <div class="time" id="seconds">0</div>
+                <div class="label">Detik</div>
+            </div>
+
+        </div>
+
+        <div class="main-buttons">
+        
+            <button class="scene-button" id="openWishes">
+                Lihat Doa & Harapan
+            </button>
+        
+        </div>
+
+        <div class="footer">
+            — dr. Rizki Ridho Pratama —
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Masjid -->
+<div class="mosque">
+
+<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+
+<path fill="#081521" fill-opacity="1"
+d="M0,256L30,240C60,224,120,192,180,186.7C240,181,300,203,360,197.3C420,192,480,160,540,149.3C600,139,660,149,720,170.7C780,192,840,224,900,224C960,224,1020,192,1080,181.3C1140,171,1200,181,1260,192C1320,203,1380,213,1410,218.7L1440,224L1440,320L0,320Z">
+
+</path>
+
+</svg>
+
+</div>
+
+
+
+<!-- Overlay Pembuka -->
+<div class="open-overlay" id="openOverlay">
+
+    <div class="open-card">
+
+        <div class="open-icon">🕌</div>
+
+        <div class="open-title">
+            Hari Raya Idul Adha 1447 H
+        </div>
+
+        <button class="open-button" id="openButton">
+            Buka Ucapan
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     Scene Doa & Harapan
+========================= -->
+
+<div class="wish-scene" id="wishScene">
+
+    <div class="wish-card">
+
+<div class="wish-header">
+
+
+
+    <div>
+
+        <div class="wish-header-title">
+            Doa & Harapan
+        </div>
+
+        <div class="wish-header-subtitle">
+            Untaian doa & harapan terbaik dari orang-orang tersayang 🤍
+        </div>
+
+    </div>
+
+</div>
+
+        <div class="divider"></div>
+
+        <!-- Slider -->
+        <div class="wish-slider">
+            
+<div class="wish-loading" id="wishLoading">
+
+    <div class="loading-moon">
+        🌙
+    </div>
+
+    <div class="loading-text">
+        Mengambil doa & harapan...
+    </div>
+
+</div>
+
+            <div class="wish-track" id="wishTrack">
+
+                <!-- Komentar otomatis masuk di sini -->
+
+            </div>
+
+        </div>
+
+        <!-- Tombol -->
+        <div class="wish-buttons">
+
+            <button class="scene-button" id="backMain">
+                ← Kembali
+            </button>
+
+            <button class="scene-button" id="openPopup">
+                ✍ Tulis Doa
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     Popup Form
+========================= -->
+
+<div class="popup-overlay" id="popupOverlay">
+
+    <div class="popup-card">
+
+        <div class="popup-close" id="closePopup">
+            ✕
+        </div>
+
+        <div class="popup-title">
+            Tulis Doa & Harapan
+        </div>
+
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Nama"
+            maxlength="20"
+        >
+
+        <textarea
+            id="messageInput"
+            placeholder="Tulis doa atau harapan..."
+            maxlength="120"
+        ></textarea>
+
+        <div class="char-counter">
+            <span id="charCount">0</span>/120
+        </div>
+
+        <button class="submit-button" id="submitWish">
+            Kirim
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+/* Stars */
+
+const starsContainer = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star = document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.top = Math.random()*100 + "%";
+    star.style.left = Math.random()*100 + "%";
+
+    star.style.animationDuration =
+        (Math.random()*3+1) + "s";
+
+    starsContainer.appendChild(star);
+}
+
+/* Countdown */
+
+const targetDate =
+new Date("May 20, 2026 19:38:00").getTime();
+
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+const countdown = document.getElementById("countdown");
+const card = document.getElementById("mainCard");
+
+const music = document.getElementById("bgMusic");
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance = targetDate - now;
+
+    /* Jika selesai */
+
+    if(distance <= 0){
+
+        clearInterval(interval);
+
+        card.classList.add("fade-out");
+
+        setTimeout(() => {
+
+countdown.style.display = "none";
+
+/* Coba autoplay */
+
+music.volume = 0.7;
+
+const playPromise = music.play();
+
+/* Tampilkan overlay */
+
+const overlay =
+document.getElementById("openOverlay");
+
+const openButton =
+document.getElementById("openButton");
+
+overlay.style.display = "flex";
+
+/* Klik tombol buka */
+
+openButton.addEventListener("click", () => {
+
+    /* Kalau autoplay gagal */
+
+    if(playPromise !== undefined){
+
+        playPromise.catch(() => {
+            music.play();
+        });
+    }
+
+    /* Fade out overlay */
+
+    overlay.style.transition =
+    "opacity 0.8s ease";
+
+    overlay.style.opacity = "0";
+
+    setTimeout(() => {
+
+        overlay.style.display = "none";
+
+        /* Ucapan utama */
+
+        title.innerHTML =
+        "Selamat Hari Raya Idul Adha 1447 H";
+
+        subtitle.innerHTML =
+        `
+        Semoga di hari yang penuh keberkahan ini,
+        kita selalu diberikan kesehatan,
+        kebahagiaan, dan hati yang penuh keikhlasan.
+        <br><br>
+        Mohon maaf lahir dan batin 🤍
+        <br><br>
+        `;
+
+document.querySelector(".main-buttons")
+.style.display = "flex";
+
+        card.classList.remove("fade-out");
+
+    },800);
+
+},{ once:true });
+
+        }, 1500);
+
+        return;
+    }
+
+    /* Hitung */
+
+    const days =
+    Math.floor(distance / (1000*60*60*24));
+
+    const hours =
+    Math.floor((distance % (1000*60*60*24))
+    / (1000*60*60));
+
+    const minutes =
+    Math.floor((distance % (1000*60*60))
+    / (1000*60));
+
+    const seconds =
+    Math.floor((distance % (1000*60))
+    / 1000);
+
+    /* Tampilkan */
+
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = hours;
+    minutesEl.innerHTML = minutes;
+    secondsEl.innerHTML = seconds;
+}
+
+const interval =
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+/* =========================
+   SCENE
+========================= */
+
+const wishScene =
+document.getElementById("wishScene");
+
+const openWishes =
+document.getElementById("openWishes");
+
+const backMain =
+document.getElementById("backMain");
+
+const mainContainer =
+document.querySelector(".container");
+
+openWishes.addEventListener("click", () => {
+
+    mainContainer.classList.add("hide-main");
+
+    wishScene.classList.add("active");
+
+});
+
+backMain.addEventListener("click", () => {
+
+    wishScene.classList.remove("active");
+
+    mainContainer.classList.remove("hide-main");
+
+});
+
+/* =========================
+   POPUP
+========================= */
+
+const popup =
+document.getElementById("popupOverlay");
+
+const openPopup =
+document.getElementById("openPopup");
+
+const closePopup =
+document.getElementById("closePopup");
+
+openPopup.addEventListener("click", () => {
+
+    popup.style.display = "flex";
+
+});
+
+closePopup.addEventListener("click", () => {
+
+    popup.style.display = "none";
+
+});
+
+/* =========================
+   SUBMIT DOA
+========================= */
+
+const submitWish =
+document.getElementById("submitWish");
+
+let isSending = false;
+
+submitWish.addEventListener("click", () => {
+
+    if(isSending) return;
+
+
+
+    const name =
+    document.getElementById("nameInput")
+    .value.trim();
+
+    const message =
+    document.getElementById("messageInput")
+    .value.trim();
+
+    if(!name || !message){
+
+        alert("Isi nama dan doa dulu ya 🤍");
+
+        return;
+    }
+    isSending = true;
+
+    submitWish.innerHTML = "Mengirim...";
+    submitWish.disabled = true;
+
+    fetch("https://script.google.com/macros/s/AKfycbxOLMlFZomFimBrQt-gRF7lmg41FujYDke2ZbFsJuS2ejiM9vXhi6dI_vTGyPO0FXi1SA/exec",{
+
+        method:"POST",
+
+        body:JSON.stringify({
+
+            name:name,
+            message:message
+
+        })
+
+    })
+
+    .then(res => res.json())
+
+    .then(data => {
+    
+        /* Tambahkan langsung ke array */
+    
+        demoWishes.push({
+    
+            name:name,
+            message:message
+    
+        });
+    
+        /* Render ulang */
+    
+        renderWishes();
+    
+        /* Tutup popup */
+        alert("Doa berhasil dikirim 🤍");
+        popup.style.display = "none";
+    
+        /* Reset form */
+    
+        document
+        .getElementById("nameInput")
+        .value = "";
+    
+        document
+        .getElementById("messageInput")
+        .value = "";
+    
+        charCount.innerHTML = "0";
+        
+        isSending = false;
+
+        submitWish.innerHTML = "Kirim";
+        submitWish.disabled = false;
+    
+    })
+    
+    .catch(() => {
+    
+        alert("Gagal mengirim doa 🤍");
+    
+        isSending = false;
+    
+        submitWish.innerHTML = "Kirim";
+        submitWish.disabled = false;
+    
+    });
+
+});
+
+/* =========================
+   CHARACTER COUNTER
+========================= */
+
+const messageInput =
+document.getElementById("messageInput");
+
+const charCount =
+document.getElementById("charCount");
+
+messageInput.addEventListener("input", () => {
+
+    charCount.innerHTML =
+    messageInput.value.length;
+
+});
+
+/* =========================
+   DEMO DATA
+========================= */
+
+const wishTrack =
+document.getElementById("wishTrack");
+
+let demoWishes = [];
+
+function renderWishes(){
+
+    wishTrack.innerHTML = "";
+
+    const duplicated =
+    [...demoWishes, ...demoWishes];
+
+    duplicated.forEach(item => {
+
+        const wishItem =
+        document.createElement("div");
+
+        wishItem.className =
+        "wish-item";
+
+        const wishName =
+        document.createElement("div");
+
+        wishName.className =
+        "wish-name";
+
+        wishName.textContent =
+        item.name;
+
+        const wishMessage =
+        document.createElement("div");
+
+        wishMessage.className =
+        "wish-message";
+
+        wishMessage.textContent =
+        item.message;
+
+        wishItem.appendChild(wishName);
+
+        wishItem.appendChild(wishMessage);
+
+        wishTrack.appendChild(wishItem);
+
+    });
+
+}
+
+renderWishes();
+/* =========================
+   FETCH DATA APPS SCRIPT
+========================= */
+
+const wishLoading =
+document.getElementById("wishLoading");
+
+fetch("https://script.google.com/macros/s/AKfycbxOLMlFZomFimBrQt-gRF7lmg41FujYDke2ZbFsJuS2ejiM9vXhi6dI_vTGyPO0FXi1SA/exec")
+
+.then(res => res.json())
+
+.then(data => {
+
+    demoWishes = data.filter(item => {
+
+        return item.name &&
+               item.message &&
+               item.name.trim() !== "" &&
+               item.message.trim() !== "";
+
+    });
+
+    renderWishes();
+
+    wishLoading.style.display =
+    "none";
+
+})
+
+.catch(() => {
+
+    wishLoading.innerHTML = `
+
+    <div class="loading-text">
+        Gagal mengambil doa 🤍
+    </div>
+
+    `;
+
+});
+
+/* =========================
+   AUTO SLIDE SMOOTH
+========================= */
+
+let currentSlide = 0;
+
+function autoSlide(){
+
+    const items =
+    document.querySelectorAll(".wish-item");
+
+    if(items.length === 0) return;
+
+    currentSlide++;
+
+    const originalLength =
+    items.length / 2;
+
+    const itemWidth =
+    items[0].offsetWidth + 20;
+
+    wishTrack.style.transition =
+    "transform 0.8s ease";
+
+    wishTrack.style.transform =
+    `translateX(-${currentSlide * itemWidth}px)`;
+
+    /* Kalau sudah sampai duplikat */
+
+    if(currentSlide >= originalLength){
+
+        setTimeout(() => {
+
+            /* Hilangkan animasi sementara */
+
+            wishTrack.style.transition =
+            "none";
+
+            currentSlide = 0;
+
+            wishTrack.style.transform =
+            `translateX(0px)`;
+
+        },800);
+
+    }
+
+}
+
+/* Slide tiap 3 detik */
+
+setInterval(autoSlide,3000);
+</script>
+</body>
+</html>
